@@ -1,2 +1,2 @@
 #!/bin/bash
-if [ "$(stat -c '%U' hello)" = "guillaume" ]; then chown vincent hello; fi
+case "$(stat -c '%U' hello)" in guillaume) chown vincent hello;; esac
