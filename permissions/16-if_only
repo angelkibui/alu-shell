@@ -1,2 +1,2 @@
 #!/bin/bash
-case "$(stat -c '%U' hello)" in guillaume) chown vincent hello;; esac
+if [ "$(stat -c %U hello)" = "guillaume" ] then echo change_owner chown vincent hello fi
