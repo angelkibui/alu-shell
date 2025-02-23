@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script parses an Apache log file, groups visitors by IP and HTTP status code,
+# counts the occurrences, and sorts the data from greatest to lowest.
+
+# Input file (Apache log file)
+log_file="apache-access.log"
+
+# Use awk to process the log file
+awk '{print $1, $9}' "$log_file" | sort | uniq -c | sort -nr

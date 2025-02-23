@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# This script reads the /etc/passwd file and tells a story about each user:
+# - The user USERNAME is part of the GROUP_ID gang, lives in HOME_DIRECTORY and rides COMMAND/SHELL.
+# - USER ID's place is protected by the passcode PASSWORD, more info about the user here: USER ID INFO
+
+# Use a while loop to read /etc/passwd line by line
+while IFS=: read -r username password userid groupid userinfo homedir shell
+do
+  # Format the story
+  echo "The user $username is part of the $groupid gang, lives in $homedir and rides $shell."
+  echo "$userid's place is protected by the passcode $password, more info about the user here: $userinfo"
+  echo "-----------------------------"
+done < /etc/passwd
