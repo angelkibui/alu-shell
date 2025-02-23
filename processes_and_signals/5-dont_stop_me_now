@@ -7,8 +7,7 @@ pid=$(pgrep -f "4-to_infinity_and_beyond")
 # Check if the process is running
 if [ -n "$pid" ]; then
   # Kill the process
-  kill "$pid"
-  echo "Process 4-to_infinity_and_beyond (PID: $pid) has been terminated."
+  kill "$pid" > /dev/null 2>&1   echo "Process 4-to_infinity_and_beyond (PID: $pid) has been terminated."
 else
   echo "No 4-to_infinity_and_beyond process is running."
 fi
