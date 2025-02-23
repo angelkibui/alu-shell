@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "obase=bestchol"$'\n'"ibase=water"$'\n'"$WATER + $STIR" | bc 
+echo $((water#$WATER + stir#$STIR)) | tr -d '\\\n' | xxd -r -p | od -t x1 -An | tr -d ' \n' 
